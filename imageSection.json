@@ -5,11 +5,11 @@
     "logoWithBackground",
     "iconWithoutBackground"
   ],
-  "authorName": "Domo, Inc12322s",
+  "authorName": "Domo, Inc1245454",
   "validImages": [
-    "logoWithBackground",
-    "iconWithBackground",
+    "logoWithoutBackground",
     "iconWithoutBackground",
-    "logoWithoutBackground"
+    "iconWithBackground",
+    "logoWithBackground"
   ]
 }
