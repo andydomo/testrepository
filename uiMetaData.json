@@ -1,0 +1,128 @@
+{
+  "name": "facebook",
+  "connectorType": "",
+  "userId": null,
+  "domoClientId": null,
+  "domoClientSecret": null,
+  "additionalInfo": null,
+  "reportLength": 3,
+  "days": 7,
+  "reports": [
+    "me",
+    "me2",
+    "me3",
+    "me4"
+  ],
+  "advancedReports": null,
+  "guid": "68f9fe62-11c2-4ed7-a82b-0069c0f0cf2f",
+  "publishPrivate": true,
+  "visibilityType": {
+    "label": "Private to your company",
+    "value": "private"
+  },
+  "parameters": [
+    {
+      "name": "abc",
+      "type": "discovery",
+      "required": false,
+      "order": -1,
+      "options": [
+        {
+          "name": "value",
+          "value": "label"
+        }
+      ],
+      "command": {
+        "name": "abc",
+        "code": "discovery.addOption(\"value\", \"label\")",
+        "type": "dropdown"
+      },
+      "helpText": "sadasdss",
+      "showWhen": "dddd",
+      "value": null,
+      "dateSelectorValue": null,
+      "$$hashKey": "object:632",
+      "tree": null
+    },
+    {
+      "name": "sx",
+      "type": "discovery",
+      "required": false,
+      "order": 1,
+      "options": [
+        {
+          "name": "value",
+          "value": "label"
+        }
+      ],
+      "command": {
+        "name": "sx",
+        "code": "discovery.addOption(\"value\", \"label\");",
+        "type": "dropdown"
+      },
+      "helpText": null,
+      "showWhen": "",
+      "value": null,
+      "dateSelectorValue": null,
+      "$$hashKey": "object:633",
+      "tree": null
+    },
+    {
+      "name": "abc",
+      "type": "string",
+      "required": false,
+      "order": 1,
+      "options": [],
+      "command": null,
+      "helpText": null,
+      "showWhen": "",
+      "value": null,
+      "dateSelectorValue": null,
+      "$$hashKey": "object:634"
+    },
+    {
+      "name": "ki",
+      "type": "string",
+      "required": false,
+      "order": 2,
+      "options": [],
+      "command": null,
+      "helpText": null,
+      "showWhen": "",
+      "value": null,
+      "dateSelectorValue": null,
+      "$$hashKey": "object:635"
+    },
+    {
+      "name": "firstname",
+      "type": "string",
+      "required": false,
+      "order": 3,
+      "options": [],
+      "command": null,
+      "helpText": null,
+      "showWhen": "",
+      "value": null,
+      "dateSelectorValue": null,
+      "$$hashKey": "object:636"
+    }
+  ],
+  "commands": null,
+  "showAdvanced": true,
+  "submittedVersion": 0,
+  "submittedMajorVersion": 0,
+  "publishedVersion": 0,
+  "workbenchEnabled": false,
+  "dataProviderCreated": false,
+  "description": null,
+  "tags": null,
+  "successResponseDefinition": null,
+  "errorResponseDefinition": null,
+  "updateCode": false,
+  "requestingCustomerId": null,
+  "ownerId": null,
+  "ownerCustomerId": null,
+  "parentGuid": null,
+  "testingProfiles": null,
+  "visible": true
+}

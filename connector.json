@@ -1,0 +1,176 @@
+{
+  "images": [
+    "iconWithBackground",
+    "logoWithoutBackground",
+    "logoWithBackground",
+    "iconWithoutBackground"
+  ],
+  "name": "facebook",
+  "connectorType": "",
+  "type": "new",
+  "authCodeText": "//Note: You will need to obtain your own client key and client secret.\n//Please see https://developers.facebook.com/docs/facebook-login for more information\n\nDOMO.log('metadata.account.code: ' + metadata.account.code);\n\nhttprequest.addHeader('Authorization', 'Bearer ' +  metadata.account.access_token);\n\nvar res = httprequest.get('https://graph.facebook.com/v2.10/me');\n\n\n\nif(res.indexOf('id') > 0){auth.authenticationSuccess();}\nelse{auth.authenicationFailed('Your oauth token has expired.');}\njhasjdh",
+  "userName": "",
+  "password": "",
+  "apiKey": "",
+  "clientKey": "",
+  "clientSecret": "",
+  "userId": null,
+  "customAccountFields": [
+    {
+      "label": "test12",
+      "value": "authu",
+      "type": "password"
+    },
+    {
+      "label": "test1",
+      "value": "123",
+      "type": "password"
+    },
+    {
+      "label": "test2",
+      "value": "123",
+      "type": "password"
+    }
+  ],
+  "domoClientId": null,
+  "domoClientSecret": null,
+  "authorizationURL": "https://www.facebook.com/dialog/oauth",
+  "accessTokenURL": "https://graph.facebook.com/oauth/access_token",
+  "scope": "email,read_friendlists,user_posts,manage_pages,read_insights",
+  "additionalParameters": "authu",
+  "oauthUserName": null,
+  "oauthPassword": null,
+  "additionalInfo": null,
+  "reportLength": 3,
+  "days": 7,
+  "processData": "DOMO.log('metadata.account.access_token: ' + metadata.account.access_token);\n\nhttprequest.get(\".domo.com/api\",data)\n\nhttprequest.addHeader('Authorization', 'Bearer ' +  metadata.account.access_token);\n\nvar res = httprequest.get('https://graph.facebook.com/v2.10/me?fields=first_name,last_name,about,location,education,work');\n\nDOMO.log('res: ' + res);\nvar me = JSON.parse(res);\n\nDOMO.log('metadata.reportname: ' +  metadata.report);\n\nif(metadata.report == 'me'){\n\n    datagrid.addColumn('first_name', datagrid.DATA_TYPE_STRING);\n    datagrid.addColumn('last_name', datagrid.DATA_TYPE_STRING);\n    datagrid.addColumn('locale', datagrid.DATA_TYPE_STRING);\n    datagrid.addColumn('about', datagrid.DATA_TYPE_STRING);\n\n    datagrid.addCell(me.first_name);\n    datagrid.addCell(me.last_name);\n    datagrid.addCell(me.location.name);\n    datagrid.addCell(me.about);\n\n    datagrid.endRow();\n\n}\nelse if(metadata.report == 'me.education'){\n\n    datagrid.addColumn('school', datagrid.DATA_TYPE_STRING);\n    datagrid.addColumn('type', datagrid.DATA_TYPE_STRING);\n    datagrid.addColumn('year', datagrid.DATA_TYPE_DOUBLE);\n    datagrid.addColumn('concentration', datagrid.DATA_TYPE_STRING);\n\n    var data = me.education;\n\n    DOMO.log('data: ' + JSON.stringify(data));\n\n    for(var i = 0; i < data.length; i++) {\n\n        var obj = data[i];\n\n        datagrid.addCell(obj.school.name);\n        datagrid.addCell(obj.type);\n        \n        var concentration = obj['concentration'];\n\n        DOMO.log('concentration: ' + JSON.stringify(concentration));\n\n        if(concentration != null)datagrid.addCell(concentration[0].name);\n        else datagrid.addCell(\"\");\n\n        datagrid.endRow();\n\n    }\n\n}\n\n\nelse if(metadata.report == 'me.work'){\n\n    datagrid.addColumn('employer', datagrid.DATA_TYPE_STRING);\n    datagrid.addColumn('location', datagrid.DATA_TYPE_STRING);\n    datagrid.addColumn('start_date', datagrid.DATA_TYPE_DATETIME);\n\n    var data = me.work;\n    for(var i = 0; i < data.length; i++) {\n\n        var obj = data[i];\n\n        datagrid.addCell(obj.employer.name);\n        if(typeof obj.location !== 'undefined') datagrid.addCell(obj.location.name);\n        else datagrid.addCell(\"\");\n        datagrid.addCell(obj.start_date);\n\n        datagrid.endRow();\n\n    }\n\n}\n",
+  "reports": [
+    "me",
+    "me2",
+    "me3",
+    "me4"
+  ],
+  "advancedReports": null,
+  "guid": "68f9fe62-11c2-4ed7-a82b-0069c0f0cf2f",
+  "authorName": "Domo, Inc12322s",
+  "accesstokenMethod": "GET",
+  "tokenAddlParams": "authu",
+  "publishPrivate": true,
+  "visibilityType": {
+    "label": "Private to your company",
+    "value": "private"
+  },
+  "parameters": [
+    {
+      "name": "abc",
+      "type": "discovery",
+      "required": false,
+      "order": -1,
+      "options": [
+        {
+          "name": "value",
+          "value": "label"
+        }
+      ],
+      "command": {
+        "name": "abc",
+        "code": "discovery.addOption(\"value\", \"label\")",
+        "type": "dropdown"
+      },
+      "helpText": "sadasdss",
+      "showWhen": "dddd",
+      "value": null,
+      "dateSelectorValue": null,
+      "$$hashKey": "object:632",
+      "tree": null
+    },
+    {
+      "name": "sx",
+      "type": "discovery",
+      "required": false,
+      "order": 1,
+      "options": [
+        {
+          "name": "value",
+          "value": "label"
+        }
+      ],
+      "command": {
+        "name": "sx",
+        "code": "discovery.addOption(\"value\", \"label\");",
+        "type": "dropdown"
+      },
+      "helpText": null,
+      "showWhen": "",
+      "value": null,
+      "dateSelectorValue": null,
+      "$$hashKey": "object:633",
+      "tree": null
+    },
+    {
+      "name": "abc",
+      "type": "string",
+      "required": false,
+      "order": 1,
+      "options": [],
+      "command": null,
+      "helpText": null,
+      "showWhen": "",
+      "value": null,
+      "dateSelectorValue": null,
+      "$$hashKey": "object:634"
+    },
+    {
+      "name": "ki",
+      "type": "string",
+      "required": false,
+      "order": 2,
+      "options": [],
+      "command": null,
+      "helpText": null,
+      "showWhen": "",
+      "value": null,
+      "dateSelectorValue": null,
+      "$$hashKey": "object:635"
+    },
+    {
+      "name": "firstname",
+      "type": "string",
+      "required": false,
+      "order": 3,
+      "options": [],
+      "command": null,
+      "helpText": null,
+      "showWhen": "",
+      "value": null,
+      "dateSelectorValue": null,
+      "$$hashKey": "object:636"
+    }
+  ],
+  "commands": null,
+  "showAdvanced": true,
+  "submittedVersion": 0,
+  "submittedMajorVersion": 0,
+  "publishedVersion": 0,
+  "workbenchEnabled": false,
+  "dataProviderCreated": false,
+  "description": null,
+  "tags": null,
+  "successResponseDefinition": null,
+  "errorResponseDefinition": null,
+  "updateCode": false,
+  "requestingCustomerId": null,
+  "ownerId": null,
+  "ownerCustomerId": null,
+  "parentGuid": null,
+  "testingProfiles": null,
+  "pacerLimits": null,
+  "enableForAppstore": false,
+  "visible": true,
+  "validImages": [
+    "logoWithBackground",
+    "iconWithBackground",
+    "iconWithoutBackground",
+    "logoWithoutBackground"
+  ]
+}

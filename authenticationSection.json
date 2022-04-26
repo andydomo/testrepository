@@ -1,0 +1,34 @@
+{
+  "type": "new",
+  "authCodeText": "//Note: You will need to obtain your own client key and client secret.\n//Please see https://developers.facebook.com/docs/facebook-login for more information\n\nDOMO.log('metadata.account.code: ' + metadata.account.code);\n\nhttprequest.addHeader('Authorization', 'Bearer ' +  metadata.account.access_token);\n\nvar res = httprequest.get('https://graph.facebook.com/v2.10/me');\n\n\n\nif(res.indexOf('id') > 0){auth.authenticationSuccess();}\nelse{auth.authenicationFailed('Your oauth token has expired.');}\njhasjdh",
+  "userName": "",
+  "password": "",
+  "apiKey": "",
+  "clientKey": "",
+  "clientSecret": "",
+  "authorizationURL": "https://www.facebook.com/dialog/oauth",
+  "accessTokenURL": "https://graph.facebook.com/oauth/access_token",
+  "oauthUserName": null,
+  "oauthPassword": null,
+  "scope": "email,read_friendlists,user_posts,manage_pages,read_insights",
+  "customAccountFields": [
+    {
+      "label": "test12",
+      "value": "authu",
+      "type": "password"
+    },
+    {
+      "label": "test1",
+      "value": "123",
+      "type": "password"
+    },
+    {
+      "label": "test2",
+      "value": "123",
+      "type": "password"
+    }
+  ],
+  "additionalParameters": "authu",
+  "tokenAddlParams": "authu",
+  "accesstokenMethod": "GET"
+}
